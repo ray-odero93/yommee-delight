@@ -132,6 +132,15 @@ $(document).ready(function () {
     $("#orderGiven").append('<tr><td id="pizzaSize">' + newOrder.size + '</td><td id="pizzaCrust">' + newOrder.crust + '</td><td id="pizzaTopping">' + newOrder.topping + '</td><td id="totalCost">' + newOrder.totalCost + '</td></tr>');
     console.log(newOrder);
   });
+
+  $("button#checkOut").click(function () {
+    $("button#checkOut").hide();
+    $("button#morePizza").hide();
+    $("button.deliver").slideDown(1100);
+    $("#additionalCost").slideDown(1100);
+    console.log("Your total bill is $ " + checkoutTotal);
+    $("#pizzaTotalCost").append("Your total bill is $ " + checkoutTotal);
+  })
   });
 };
   
