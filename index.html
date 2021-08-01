@@ -12,7 +12,7 @@
   </head>
 </head>
 <body>
-  <section class="app">
+    <section class="app">
       <div class="app-main-body">
         <!-- header section; navbar, intro part --with background image & title/logo -->
 
@@ -20,10 +20,10 @@
           <div class="container">
             <div class="row">
               <div class="col header-column">
-                <section class="app-brand-logo">
+                <section class="brand-logo">
                  <img src="./images/pizza-logo/pizza-inn-logo.png"> 
                 </section>
-                <section class="app-user-account">
+                <section class="user-account">
                   <img src="./images/pizza-logo/userIcon.svg">
                 </section>
               </div>
@@ -34,19 +34,20 @@
         <!-- ordering food section --with option to choose delivery/pick-up, selection of pizza by size, choosing crusts to be added, choosing toppings, get their order's full price -->
 
         <div class="app-body">
-          <main class="app-body-landing">
+          <main class="app-landing">
             <!-- advert banner -->
 
-            <div class="app-body-banner">
-              <section>
-                <!-- background-image;url() -->
+            <div class="app-landing-banner">
+              <section class="landing-banner">
+                <img src="./images/pizza-banners/pizza-banner2.png">
               </section>
             </div>
 
             <!-- 2. ordering tab -->
 
-            <div class="app-body-ordering">
-              <div class="container">
+            <div class="order">
+              <div class="order-wrapper">
+                <div class="container">
                 <div class="row"></div>
               </div>
 
@@ -62,20 +63,34 @@
                 <div class="row">
                   <div class="row">
                     <div class="col">
-                      <article>
-                        <table>
-                          <tbody>
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </article>
+                      <form class="order-delivery">
+                        <label for="pizza-size">Choose Pizza size:</label>
+                        <select id="sizes">
+                          <option value="small">Small</option>
+                          <option value="medium">Medium</option>
+                          <option value="large">Large</option>
+                        </select>
+                        <label for="pizza-crust">Choose Pizza size:</label>
+                        <select id="crusts">
+                          <option value="crispy">crispy</option>
+                          <option value="medium">Stuffed</option>
+                          <option value="large">Gluten-free</option>
+                        </select>
+                        <label for="pizza-topping">Choose Pizza size:</label>
+                        <select id="toppings">
+                          <option value="pepperoni">Pepperoni</option>
+                          <option value="mushroom">Mushroom</option>
+                          <option value="extra-cheese">Extra-Cheese</option>
+                        </select>
+                        <input type="checkbox" id="delivery" value="deliver">
+                        <label for="delivery">Deliver</label><br/>
+                         <input type="checkbox" id="pick-up" value="pick-up">
+                        <label for="pick-up">Pick-Up</label> 
+                      </form>
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
 
