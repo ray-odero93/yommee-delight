@@ -73,19 +73,19 @@ $(document).ready(function () {
     checkoutTotal += total;
 
     $("#pizzaSize").html($("#sizes option:selected").val());
-    $("#pizzaCrusts").html($("#crusts option:slected").val());
-    $("#pizzaToppings").html.join(", "));
+    $("#pizzaCrusts").html($("#crusts option:selected").val());
+    $("#pizzaToppings").join(", "));
   $("#totalCost").html(total);
 
   $("button.morePizza").click(function () {
-      let pizzaSize = $("#sizes option:selected").val();
-      let pizzaCrust = $("#crusts option:selected").val();
-      let pizzaTopping = [];
+      let sizePizza = $("#sizes option:selected").val();
+      let crustPizza = $("#crusts option:selected").val();
+      let toppingPizza = [];
       $.each($("input[name='toppings']:checked"), function(){            
-          pizzaTopping.push($(this).val());
+          toppingPizza.push($(this).val());
       });
-      console.log(pizzaTopping.join(", "));
-      switch(pizzaSize){
+      console.log(toppingPizza.join(", "));
+      switch(sizePizza){
         case "0":
           price =0;
         break;
@@ -103,15 +103,15 @@ $(document).ready(function () {
          default:
            console.log("ERROR!"); 
        }
-       switch(pizzaCrust){
+       switch(crustPizza){
           case "0":
             crustPrice = 0;
           break;
           case "Crispy":
-            crustprice = 3.00;
+            crustPrice = 3.00;
           break;
           case "Stuffed":
-            crust_price = 2.49;
+            crustPrice = 2.49;
           break;
           case "Gluten-free":
             crustPrice = 1.49;
@@ -119,14 +119,19 @@ $(document).ready(function () {
           default:
             console.log("No charge."); 
         }
-        let topsValue = pizzaTopping.length*50;
+        let toppingValue = toppingsPizza.length*50;
         console.log("toppings value" + topping_value);
-        total = price + crustPrice + topsValue;
+        total = price + crustPrice + toppingValue;
         console.log(total);
     
-        checkoutTotal = checkoutTotal + total;
-        console.log(checkoutTotal);
+        checkoutTotal += total;
+    console.log(checkoutTotal);
+    
+    var newOrder = new eatPizza(size, crust, topping, total);
+
+    $("#orderGiven").append('<tr><td id="pizzaSize">' + newOrder.size + '</td><td id="pizzaCrust">' + newOrder.crust + '</td><td id="pizzaTopping">' + newOrder.topping + '</td><td id="totalCost">' + newOrder.totalCost + '</td></tr>');
+    console.log(newOrder);
   });
   });
-});
+};
   
