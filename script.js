@@ -42,6 +42,25 @@ $(document).ready(function () {
         break;
       default:
         console.log("ERROR!");
-    }
+        break;
+    };
+    switch (crustPizza) {
+      case "0":
+        crustPrice = 0;
+        break;
+      case "Crispy":
+        crustPrice = 3.00;
+        break;
+      case "Stuffed":
+        crustPrice = 2.49;
+        break;
+      case "Gluten-free":
+        crustPrice = 1.49;
+        break;
+
+      default:
+        console.log("No charge.");
+        break;
+    };
   })
 })
