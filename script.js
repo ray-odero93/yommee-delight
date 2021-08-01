@@ -12,9 +12,10 @@ function eatPizza(size, crust, topping, total) {
 
 
 // user interface logic
+// upon clicking the continue button
 
 $(document).ready(function () {
-  $("button.proceed").click(function (event) {
+  $("button.continue").click(function (event) {
     let sizePizza = $("#sizes option:selected").val();
     let crustPizza = $("#crusts option:sewlected").val();
     let toppingPizza = [];
@@ -62,5 +63,19 @@ $(document).ready(function () {
         console.log("No charge.");
         break;
     };
-  })
-})
+
+    let toppingValue = toppingPizza.length * 50;
+    console.log("toppings value " + toppingValue);
+
+    total = price + crustPrice + toppingValue;
+    console.log(total);
+    let checkoutTotal = 0;
+    checkoutTotal += total;
+
+    $("#pizzaSize").html($("#sizes option:selected").val());
+    $("#pizzaCrusts").html($("#crusts option:slected").val());
+    $("#pizzaToppings").html.join(", "));
+  $("#totalCost").html(total);
+  });
+});
+  
