@@ -1,13 +1,11 @@
-var size = ["small","medium","large"];
-var crust = ["crispy","stuffed","gluten-free"];
-var toppings = ["pepperoni","mushroom","extra-cheese"];
-var contact = ["delivery","pick-up"];
+var sizePrice, crustPrice, toppingsPrice;
+let total = 0;
 
-function Order(size, crust, toppings, contact) {
-  this.pizzaSize = size;
-  this.pizzaCrust = crust;
-  this.pizzaTops = toppings;
-  this.pizzaDelivery = contact;
-};
+function eatPizza(size, crust, topping, total) {
+  this.size = size;
+  this.crust = crust;
+  this.topping = topping;
+  this.total = total;
+}
 
 
