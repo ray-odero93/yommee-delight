@@ -62,31 +62,71 @@
               <div class="container">
                 <div class="row">
                   <div class="row">
-                    <div class="col">
+                    <div class="col place-order">
                       <form class="order-delivery">
-                        <label for="pizza-size">Choose Pizza size:</label>
+                        <label for="pizza-size">Choose the size of pizza:</label>
                         <select id="sizes">
-                          <option value="small">Small</option>
-                          <option value="medium">Medium</option>
-                          <option value="large">Large</option>
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
                         </select>
-                        <label for="pizza-crust">Choose Pizza size:</label>
+                        <label for="pizza-crust">Choose your favorite crust:</label>
                         <select id="crusts">
-                          <option value="crispy">crispy</option>
-                          <option value="medium">Stuffed</option>
-                          <option value="large">Gluten-free</option>
+                          <option selected value="0">Select</option>
+                          <option value="Crispy">Crispy</option>
+                          <option value="Medium">Stuffed</option>
+                          <option value="Large">Gluten-free</option>
                         </select>
-                        <label for="pizza-topping">Choose Pizza size:</label>
-                        <select id="toppings">
-                          <option value="pepperoni">Pepperoni</option>
-                          <option value="mushroom">Mushroom</option>
-                          <option value="extra-cheese">Extra-Cheese</option>
-                        </select>
-                        <input type="checkbox" id="delivery" value="deliver">
-                        <label for="delivery">Deliver</label><br/>
-                         <input type="checkbox" id="pick-up" value="pick-up">
-                        <label for="pick-up">Pick-Up</label> 
+                        <label for="pizza-topping">Choose your favorite toppings:</label>
+                        <div id="toppings">
+                          <input type="checkbox" value="Pepperoni" id="pepper"/>
+                          <label for="pepper">Pepperoni</label>
+                          <input type="checkbox" value="Mushroom" id="mush"/>
+                          <label for="mush">Mushroom</label>
+                          <input type="checkbox" value="Extra-Cheese" id="extra"/>
+                          <label for="extra">Extra-Cheese</label>
+                        </div>
                       </form>
+                      <div class="choice">
+                        <h3>Your order is:</h3>
+                        <div id="userOrders">
+                          <table class="table table-sm pizzaOrder">
+                            <thead>
+                              <tr>
+                                <th scope="col">Size</th>
+                                <th scope="col">Crust</th>
+                                <th scope="col">Toppings</th>
+                                <th scope="col">Total</th>
+                              </tr>
+                            </thead>
+                            <tbody id="orderGiven">
+                              <tr>
+                                <td id="pizzaSize"></td>
+                                <td id="pizzaCrusts"></td>
+                                <td id="pizzaToppings"></td>
+                                <td id="totalCost"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p id="pizzaTotalCost"></p>
+                          <p id="totalBill"></p>
+                          <p id="additionalCost">Delivery will cost $1.50.</p>
+                          <p id="summaryText"></p>
+                        </div>
+                          <button class="btn">More Pizza</button>
+                          <button class="btn">Checkout</button>
+                          <button class="btn">Deliver</button>
+                      </div>
+                      <div class="deliveryLocation">
+                        <form>
+                          <div class="form-group">
+                            <input type="text" id="name" class="form-control mb-3" placeholder="Name...">
+                            <input type="number" id="telNumber" class="form-control mb-3" placeholder="Phone Number...">
+                            <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery...">
+                            <button class="btn">Place Order</button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -97,8 +137,33 @@
             <!-- 3. adverts section -->
 
             <div class="app-body-reels">
-              <section></section>
-              <div class="container"></div>
+              <section>
+                <h3>Latest Offers</h3>
+              </section>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div class="slick-slider">
+                      <div class="slick-list">
+                        <div class="slick-items">
+                          <div class="slick-slide">
+                            <img src="./images/pizza-banners/advert-offer1.webp">
+                          </div>
+                          <div class="slick-slide">
+                            <img src="./images/pizza-banners/advert-offer2.webp">
+                          </div>
+                          <div class="slick-slide">
+                            <img src="./images/pizza-banners/advert-offer3.webp">
+                          </div>
+                          <div class="slick-slide">
+                            <img src="./images/pizza-banners/advert-offer4.webp">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </main>
         </div>
@@ -106,8 +171,24 @@
         <!-- footer section -->
 
         <section class="app-footer">
-          <section class="footer-main"></section>
-          <section class="footer-sub"></section>
+          <section class="footer-main">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div col-md-3></div>
+              </div>
+            </div>
+          </section>
+          <section class="footer-sub">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <p>YOMMEE PIZZERIA<br/>(c)2021.</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </section>
