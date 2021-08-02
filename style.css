@@ -69,6 +69,10 @@
   object-fit: fill;
 }
 
+.app-landing-banner {
+  margin-bottom: 25px;
+}
+
 .place-order {
   display: flex;
   justify-content: space-between;
