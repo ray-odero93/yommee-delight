@@ -7,8 +7,8 @@
   <title>Yomme Pizza</title>
   <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
-    <script src="./js/jquery-3.6.0.js" type="text/javascript"></script>
-    <script src="./script.js" type="text/javascript"></script>
+    <script src="./js/jquery-3.6.0.js" type="text/javascript" defer></script>
+    <script src="./script.js" type="text/javascript" defer></script>
   </head>
 </head>
 <body>
@@ -21,10 +21,10 @@
             <div class="row">
               <div class="col header-column">
                 <section class="brand-logo">
-                 <img src="./images/pizza-logo/pizza-inn-logo.png"> 
+                 <img src="./images/pizza-logo/pizza-inn-logo.png" style="width: 100%;"> 
                 </section>
                 <section class="user-account">
-                  <img src="./images/pizza-logo/userIcon.svg">
+                  <img src="./images/pizza-logo/userIcon.svg" style="width: 100%;">
                 </section>
               </div>
             </div>
@@ -39,33 +39,22 @@
 
             <div class="app-landing-banner">
               <section class="landing-banner">
-                <img src="./images/pizza-banners/pizza-banner2.png">
-              </section>
+                 <img src="./images/pizza-banners/pizza-banner2.png" style="width: 100%;">
+                 <img src="./images/pizza-banners/advert-offer3.webp" style="width: 100%;">             
+                </section>
             </div>
 
             <!-- 2. ordering tab -->
 
             <div class="order">
               <div class="order-wrapper">
+                <h2>ORDER HERE:</h2>
                 <div class="container">
-                <div class="row"></div>
-              </div>
-
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <div class="col-md-8"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="container">
-                <div class="row">
                   <div class="row">
-                    <div class="col place-order">
-                      <form class="order-delivery">
+                    <form action="" class="order-delivery">
                         <label for="pizza-size">Choose the size of pizza:</label>
                         <select id="sizes">
+                          <option selected value="0">Select</option>
                           <option value="Small">Small</option>
                           <option value="Medium">Medium</option>
                           <option value="Large">Large</option>
@@ -78,14 +67,16 @@
                           <option value="Large">Gluten-free</option>
                         </select>
                         <label for="pizza-topping">Choose your favorite toppings:</label>
-                        <div id="toppings">
-                          <input type="checkbox" value="Pepperoni" id="pepper"/>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" value="Pepperoni" id="pepper"class="custom-control-input"/>
                           <label for="pepper">Pepperoni</label>
                           <input type="checkbox" value="Mushroom" id="mush"/>
                           <label for="mush">Mushroom</label>
                           <input type="checkbox" value="Extra-Cheese" id="extra"/>
                           <label for="extra">Extra-Cheese</label>
                         </div>
+                        <br/>
+                        <button type="submit" class="btn-primary continue">Continue</button>
                       </form>
                       <div class="choice">
                         <h3>Your order is:</h3>
@@ -113,9 +104,9 @@
                           <p id="additionalCost">Delivery will cost $1.50.</p>
                           <p id="summaryText"></p>
                           </div>
-                          <button class="btn">More Pizza</button>
-                          <button class="btn">Checkout</button>
-                          <button class="btn">Deliver</button>
+                          <button class="btn-secondary morePizza">More Pizza</button>
+                          <button class="btn-secondary checkOut">Checkout</button>
+                          <button class="btn-secondary deliver">Deliver</button>
                       </div>
                       <div class="deliveryLocation">
                         <form>
@@ -123,14 +114,12 @@
                             <input type="text" id="name" class="form-control mb-3" placeholder="Name...">
                             <input type="number" id="telNumber" class="form-control mb-3" placeholder="Phone Number...">
                             <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery...">
-                            <button class="btn">Place Order</button>
+                            <button class="btn-primary" id="completeOrder">Place Order</button>
                           </div>
                         </form>
                       </div>
-                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
 
@@ -147,16 +136,13 @@
                       <div class="slick-list">
                         <div class="slick-items">
                           <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer1.webp">
+                            <img src="./images/pizza-banners/advert-offer1.webp" style="width: 100%;">
                           </div>
                           <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer2.webp">
+                            <img src="./images/pizza-banners/advert-offer2.webp" style="width: 100%;">
                           </div>
                           <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer3.webp">
-                          </div>
-                          <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer4.webp">
+                            <img src="./images/pizza-banners/advert-offer4.webp" style="width: 100%;">
                           </div>
                         </div>
                       </div>
