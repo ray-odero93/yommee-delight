@@ -1,49 +1,14 @@
-* {
-  box-sizing: border-box;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.app-header {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  min-height: 50px;
-  max-height: 50px;
-  position: relative;
-  width: 150px;
-  margin-bottom: 25vh;
-}
+.app-header {}
 
 .app-header,
-.container {
-  display: block;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 150px;
-}
+.container {}
 
 .app-header,
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
-}
+.row {}
 
 .header-column {
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-between;
-  max-width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative;
-  width: 150px;
+
 }
 
 .brand-logo {
@@ -58,9 +23,6 @@
 .app-body {
   display: flex;
   align-items: center;
-  flex-basis: auto;
-  flex-direction: column;
-  margin: 0;
 }
 
 .app-landing {
@@ -70,11 +32,40 @@
 }
 
 .app-landing-banner {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 25px;
 }
+
+ .landing-banner{
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+} 
 
 .place-order {
   display: flex;
   justify-content: space-between;
-  margin-left: 50vh;
+}
+.app-body-reels {
+  display: flex;
+  justify-content: space-between;
+}
+.slick-list {
+  flex-direction: row;
+}
+
+@media only screen and (max-width:480px) {
+  .flex-xs-column {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width:720px)  {
+  .order-wrapper {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  body, header, .
 }
