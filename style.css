@@ -1,10 +1,11 @@
-.app-header {}
-
-.app-header,
-.container {}
-
-.app-header,
-.row {}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F2BB13;
+}
 
 .header-column {
   display: flex;
@@ -29,6 +30,7 @@
   display: block;
   padding-bottom: 55px;
   object-fit: fill;
+  overflow: hidden;
 }
 
 .app-landing-banner {
@@ -58,7 +60,37 @@
   justify-content: space-evenly;
   align-items: center;
 }
+.order {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #F2BB13;
+}
 
+.choice {
+  display: none;
+}
+
+.order-wrapper{
+  text-align: center;
+}
+
+.order-delivery{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.deliveryLocation {
+  display: none;
+}
+.app-footer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 @media only screen and (max-width:480px) {
   .flex-xs-column {
@@ -72,5 +104,4 @@
     padding-left: 15px;
     padding-right: 15px;
   }
-  body, header, .
 }
