@@ -140,7 +140,21 @@ $(document).ready(function () {
     $("#additionalCost").slideDown(1100);
     console.log("Your total bill is $ " + checkoutTotal);
     $("#pizzaTotalCost").append("Your total bill is $ " + checkoutTotal);
-  })
+  });
+
+  $("button.deliver").click(function(){
+      $(".pizzaOrder").hide();
+      $(".choice h3").hide();
+      $(".deliveryLocation").slideDown(1000);
+      $("#additionalCost").hide();
+      $("button.deliver").hide();
+      $("#pizzaTotalCost").hide();
+      let deliveryCost= checkoutTotal+150;
+      console.log("You will pay sh. "+deliveryCost+" on delivery.");
+      $("#totalbill").append("Your bill plus delivery fee is: "+deliveryCost);
+  });
+  
+  
   });
 };
   
