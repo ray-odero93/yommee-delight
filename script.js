@@ -151,10 +151,36 @@ $(document).ready(function () {
       $("#pizzaTotalCost").hide();
       let deliveryCost= checkoutTotal+150;
       console.log("You will pay sh. "+deliveryCost+" on delivery.");
-      $("#totalbill").append("Your bill plus delivery fee is: "+deliveryCost);
+      $("#totalBill").append("Your bill plus delivery fee is: "+deliveryCost);
   });
   
+  $("button#completeOrder").click(function (event) {
+    event.preventDefault();
+
+    $("#pizzaTotalCost").hide();
+    $(".deliver").hide();
+    $("button#completeOrder").hide();
+    let deliveryCost = checkoutTotal + 150;
+    console.log("Final Bill is: " + deliveryCost);
+    let person = $("input#name").val();
+    let phone = $("input#telNumber").val();
+    let location = $("input#location").val();
+
+    if ($("input#name").val() && $("input#telNumber").val() && $("input#location").val() != "") {
   
+      $("#summaryText").append(person + ", your order has been received and will be delivered in an hour or more at " + location + ". Your total cost is $" + deliveryCost);
+      $("#totalBill").hide();
+      $("#summaryText").slideDown(1200);
+    }
+    else {
+      alert("Please fill in the details for delivery!");
+      $(".delivery").show();
+      $("button#completeOrder").show();
+    };
   });
-};
+
+  event.preventDefault();
+
+  });
+});
   
