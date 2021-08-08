@@ -1,184 +1,787 @@
-// business logic
-
-var sizePrice, crustPrice, toppingsPrice;
-let total = 0;
-
-function eatPizza(size, crust, topping, total) {
-  this.size = size;
-  this.crust = crust;
-  this.topping = topping;
-  this.total = total;
-}
-
-
-// user interface logic
-// upon clicking the continue button
-
 $(document).ready(function () {
-  $("button.continue").click(function (event) {
-    let sizePizza = $("#sizes option:selected").val();
-    let crustPizza = $("#crusts option:selected").val();
-    let toppingPizza = [];
-    $.each($("input[name='toppings']:checked"), function () {
-      toppingPizza.push($(this).val());
+  $("#btnn").click(function () {
+    $(".customer").toggle();
+
+    let name = $("#pname option:selected").val();
+    console.log(name);
+    let size = $("#size option:selected").val();
+    let crust = $("#crust option:selected").val();
+    let toppings = $("#toppings option:selected").val();
+    let number = $("#number").val();
+
+    $("#yes").click(function () {
+      prompt("Enter location for delivery");
+      alert(
+        "The delivery fee is 200.Your order has been received and is being processed.Your total amount is;" +
+          (totalBill + 200),
+      );
+    });
+    $("#no").click(function () {
+      alert(
+        "Your order has been received and is being processed.Your total amount is;" +
+          totalBill,
+      );
     });
 
-    console.log(toppingPizza.join(", "));
-
-    switch (sizePizza) {
-      case "0":
-        price = 0;
-        break;
-      case "large":
-        price = 14.99;
-        console.log(price);
-        break;
-      case "medium":
-        price = 11.99;
-        console.log(price);
-        break;
-      case "small":
-        price = 4.79;
-        console.log(price);
-        break;
-      default:
-        console.log("ERROR!");
-        break;
+    let order = (name, size, crust, topping, number, totalBill) => {
+      return { name, size, crust, topping, number, totalBill };
     };
-    switch (crustPizza) {
-      case "0":
-        crustPrice = 0;
+    let price;
+    let totalBill = 0;
+
+    switch (name) {
+      case (name = "Cheese Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
         break;
-      case "Crispy":
-        crustPrice = 3.00;
+      case (name = "Veggie Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
         break;
-      case "Stuffed":
-        crustPrice = 2.49;
+      case (name = "Veggie Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
         break;
-      case "Gluten-free":
-        crustPrice = 1.49;
+      case (name = "Pepperoni Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
         break;
-
-      default:
-        console.log("No charge.");
+      case (name = "Meat Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
         break;
-    };
+      case (name = "Margherita Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
+        break;
+      case (name = "BBQ Chicken Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
+        break;
+      case (name = "Hawaiian Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
+        break;
+      case (name = "Buffalo Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            x;
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
+        break;
+      case (name = "Supreme Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
+        break;
+      case (name = "Works Pizza"):
+        switch (size) {
+          case (size = "Large"):
+            price = 1200;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
 
-    let toppingValue = toppingPizza.length * 50;
-    console.log("toppings value " + toppingValue);
+          case (size = "Medium"):
+            price = 900;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Small"):
+            price = 750;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "One Piecer"):
+            price = 250;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Regular"):
+            price = 650;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+          case (size = "Pizza Kadogo"):
+            price = 500;
+            if (crust === "Crispy") {
+              totalBill = price * number + 350;
+            } else if (crust === "Stuffed") {
+              totalBill = price * number + 250;
+            } else if (crust === "Gluten-free") {
+              totalBill = price * number + 150;
+            }
+            break;
+        }
+        break;
+    }
 
-    total = price + crustPrice + toppingValue;
-    console.log(total);
-    let checkoutTotal = 0;
-    checkoutTotal += total;
+    switch (toppings) {
+      case (topping = "Mushroom"):
+        totalBill = totalBill + 280;
+        break;
+      case (topping = "Sausage"):
+        totalBill = totalBill + 180;
+        break;
+      case (topping = "Bacon"):
+        totalBill = totalBill + 280;
+        break;
+      case (topping = "Extra Cheese"):
+        totalBill = totalBill + 200;
+        break;
+      case (topping = "Pineapple"):
+        totalBill = totalBill + 150;
+        break;
+      case (topping = "Pepperoni"):
+        totalBill = totalBill + 250;
+        break;
+    }
 
-    $("#pizzaSize").html($("#sizes option:selected").val());
-    $("#pizzaCrusts").html($("#crusts option:selected").val());
-    $("#totalCost").html(total);
-
-    $("button.morePizza").click(function () {
-      let sizePizza = $("#sizes option:selected").val();
-      let crustPizza = $("#crusts option:selected").val();
-      let toppingPizza = [];
-      $.each($("input[name='toppings']:checked"), function () {
-        toppingPizza.push($(this).val());
-      });
-      console.log(toppingPizza.join(", "));
-      switch (sizePizza) {
-        case "0":
-          price = 0;
-          break;
-        case "large":
-          price = 14.99;
-          console.log(price);
-          break;
-        case "medium":
-          price = 11.99;
-          console.log(price);
-          break;
-        case "small":
-          price = 4.79;
-          console.log(price);
-        default:
-          console.log("ERROR!");
-      }
-      switch (crustPizza) {
-        case "0":
-          crustPrice = 0;
-          break;
-        case "Crispy":
-          crustPrice = 3.00;
-          break;
-        case "Stuffed":
-          crustPrice = 2.49;
-          break;
-        case "Gluten-free":
-          crustPrice = 1.49;
-          break;
-        default:
-          console.log("No charge.");
-      }
-      let toppingValue = toppingsPizza.length * 50;
-      console.log("toppings value" + topping_value);
-      total = price + crustPrice + toppingValue;
-      console.log(total);
-    
-      checkoutTotal += total;
-      console.log(checkoutTotal);
-    
-      var newOrder = new eatPizza(size, crust, topping, total);
-
-      $("#orderGiven").append('<tr><td id="pizzaSize">' + newOrder.size + '</td><td id="pizzaCrust">' + newOrder.crust + '</td><td id="pizzaTopping">' + newOrder.topping + '</td><td id="totalCost">' + newOrder.totalCost + '</td></tr>');
-      console.log(newOrder);
-    });
-
-    $("button#checkOut").click(function () {
-      $("button#checkOut").hide();
-      $("button#morePizza").hide();
-      $("button.deliver").slideDown(1100);
-      $("#additionalCost").slideDown(1100);
-      console.log("Your total bill is $ " + checkoutTotal);
-      $("#pizzaTotalCost").append("Your total bill is $ " + checkoutTotal);
-    });
-
-    $("button.deliver").click(function () {
-      $(".pizzaOrder").hide();
-      $(".choice h3").hide();
-      $(".deliveryLocation").slideDown(1000);
-      $("#additionalCost").hide();
-      $("button.deliver").hide();
-      $("#pizzaTotalCost").hide();
-      let deliveryCost = checkoutTotal + 150;
-      console.log("You will pay sh. " + deliveryCost + " on delivery.");
-      $("#totalBill").append("Your bill plus delivery fee is: " + deliveryCost);
-    });
-  
-    $("button#completeOrder").click(function (event) {
-      event.preventDefault();
-
-      $("#pizzaTotalCost").hide();
-      $(".deliver").hide();
-      $("button#completeOrder").hide();
-      let deliveryCost = checkoutTotal + 150;
-      console.log("Final Bill is: " + deliveryCost);
-      let person = $("input#name").val();
-      let phone = $("input#telNumber").val();
-      let location = $("input#location").val();
-
-      if ($("input#name").val() && $("input#telNumber").val() && $("input#location").val() != "") {
-  
-        $("#summaryText").append(person + ", your order has been received and will be delivered in an hour or more at " + location + ". Your total cost is $" + deliveryCost);
-        $("#totalBill").hide();
-        $("#summaryText").slideDown(1200);
-      }
-      else {
-        alert("Please fill in the details for delivery!");
-        $(".delivery").show();
-        $("button#completeOrder").show();
-      };
-    });
-
-    event.preventDefault();
-
+    let newOrder = order(name, size, crust, topping, number, totalBill);
+    $("#cart").text(" ");
+    $("#cart").append(
+      "<br>" +
+        "Pizza :   " +
+        newOrder.name +
+        "<br>" +
+        "Size :   " +
+        newOrder.size +
+        "<br>" +
+        "Crust :     " +
+        newOrder.crust +
+        "<br>" +
+        "Toppings :     " +
+        newOrder.topping +
+        "<br>" +
+        " Number of pizzas :    " +
+        newOrder.number +
+        "<br>" +
+        "Total Bill :  " +
+        newOrder.totalBill +
+        "<br>",
+    );
   });
+
+  this.totalBill = parseInt(totalBill);
+  console.log(totalBill);
 });
