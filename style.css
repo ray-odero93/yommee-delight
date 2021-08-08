@@ -293,6 +293,11 @@ a:hover {
   background-color: white;
 }
 
+.numbre {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 #menu {
   padding-top: 20px;
   width: 90%;
