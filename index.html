@@ -1,181 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yomme Pizza</title>
-  <link href="./css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="./style.css" rel="stylesheet" type="text/css" />
-    <script src="./js/jquery-3.6.0.js" type="text/javascript" defer></script>
-    <script src="./script.js" type="text/javascript" defer></script>
-  </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Img/pizza.ico"/>
+        <title>Yommee Pizzeria</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="app">
-      <div class="app-main-body">
-        <!-- header section; navbar, intro part --with background image & title/logo -->
-
-        <header class="app-header">
-          <div class="container">
-            <div class="row">
-              <div class="col header-column">
-                <section class="brand-logo">
-                 <img src="./images/pizza-logo/pizza-inn-logo.png" style="width: 100%;"> 
-                </section>
-                <section class="user-account">
-                </section>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <!-- ordering food section --with option to choose delivery/pick-up, selection of pizza by size, choosing crusts to be added, choosing toppings, get their order's full price -->
-
-        <div class="app-body">
-          <main class="app-landing">
-            <!-- advert banner -->
-
-            <div class="app-landing-banner">
-              <section class="landing-banner">
-                 <img src="./images/pizza-banners/pizza-banner2.png" style="width: 100%;">
-                 <img src="./images/pizza-banners/advert-offer3.webp" style="width: 100%;">             
-                </section>
-            </div>
-
-            <!-- 2. ordering tab -->
-
-            <div class="order">
-              <div class="order-wrapper">
-                <h2>ORDER HERE:</h2>
-                <div class="container">
-                  <div class="row">
-                    <form action="" class="order-delivery">
-                        <label for="pizza-size">Choose the size of pizza:</label>
-                        <select id="sizes">
-                          <option selected value="0">Select</option>
-                          <option value="Small">Small</option>
-                          <option value="Medium">Medium</option>
-                          <option value="Large">Large</option>
-                        </select>
-                        <label for="pizza-crust">Choose your favorite crust:</label>
-                        <select id="crusts">
-                          <option selected value="0">Select</option>
-                          <option value="Crispy">Crispy</option>
-                          <option value="Medium">Stuffed</option>
-                          <option value="Large">Gluten-free</option>
-                        </select>
-                        <label for="pizza-topping">Choose your favorite toppings:</label>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" value="Pepperoni" id="pepper"class="custom-control-input"/>
-                          <label for="pepper">Pepperoni</label>
-                          <input type="checkbox" value="Mushroom" id="mush"/>
-                          <label for="mush">Mushroom</label>
-                          <input type="checkbox" value="Extra-Cheese" id="extra"/>
-                          <label for="extra">Extra-Cheese</label>
-                        </div>
-                        <br/>
-                        <button type="submit" class="btn-primary continue">Continue</button>
-                      </form>
-                      <div class="choice">
-                        <h3>Your order is:</h3>
-                        <div id="userOrders">
-                          <table class="table table-sm pizzaOrder">
-                            <thead>
-                              <tr>
-                                <th scope="col">Size</th>
-                                <th scope="col">Crust</th>
-                                <th scope="col">Toppings</th>
-                                <th scope="col">Total</th>
-                              </tr>
-                            </thead>
-                            <tbody id="orderGiven">
-                              <tr>
-                                <td id="pizzaSize"></td>
-                                <td id="pizzaCrusts"></td>
-                                <td id="pizzaToppings"></td>
-                                <td id="totalCost"></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <p id="pizzaTotalCost"></p>
-                          <p id="totalBill"></p>
-                          <p id="additionalCost">Delivery will cost $1.50.</p>
-                          <p id="summaryText"></p>
-                          </div>
-                          <button class="btn-secondary morePizza">More Pizza</button>
-                          <button class="btn-secondary checkOut">Checkout</button>
-                          <button class="btn-secondary deliver">Deliver</button>
-                      </div>
-                      <div class="deliveryLocation">
-                        <form>
-                          <div class="form-group">
-                            <input type="text" id="name" class="form-control mb-3" placeholder="Name...">
-                            <input type="number" id="telNumber" class="form-control mb-3" placeholder="Phone Number...">
-                            <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery...">
-                            <button class="btn-primary" id="completeOrder">Place Order</button>
-                          </div>
-                        </form>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3. adverts section -->
-
-            <div class="app-body-reels">
-              <section>
-                <h3>Latest Offers</h3>
-              </section>
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <div class="slick-slider">
-                      <div class="slick-list">
-                        <div class="slick-items">
-                          <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer1.webp" style="width: 100%;">
-                          </div>
-                          <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer2.webp" style="width: 100%;">
-                          </div>
-                          <div class="slick-slide">
-                            <img src="./images/pizza-banners/advert-offer4.webp" style="width: 100%;">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
+    <!--Header -->
+    <header id="header" class="header-tops">
+        <div class="container">
+            <h1><a href="index.html">Yommee Pizzeria</a></h1>
+            <h2>So Delicious!</h2>
+        <!-- Navigation Menu -->
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#dishes">Dishes</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- end of navigation menu -->
         </div>
-
-        <!-- footer section -->
-
-        <section class="app-footer">
-          <section class="footer-main">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-3"></div>
-                <div col-md-3></div>
-              </div>
+    </header>
+    <!-- end of Header -->
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container-fluid">
+        <div class="about-grande ">
+            <div class="title">
+                <h2>About</h2>
+                <p>Yommee Pizzeria is a new player in the food & drinks industry.</p>
             </div>
-          </section>
-          <section class="footer-sub">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3">
-                  <p>YOMMEE PIZZERIA<br/>(c)2021.</p>
+            <div class="row">
+                    <Finger-lickin>Delicious pizza straight from the oven!<br/>Finger-lickin' good!</p>
                 </div>
-              </div>
             </div>
-          </section>
-        </section>
-      </div>
+        </div>
     </section>
+    <!-- Dishes -->
+    <div class="container-fluid">
+    <div class="menu" id="dishes">
+        <h2>Hot Deals:</h2>
+        <div class="row" id="menu">
+            <div class="col-md-3" id="menu1">
+                <img id="port" src="./images/pizza-banners/advert-offer1.webp" alt="">
+            </div>
+            <div class="col-md-3" id="menu2">
+                <img id="port" src="./images/pizza-banners/advert-offer2.webp" alt="">
+            </div>
+                        <div class="col-md-3" id="menu3">
+                <img id="port" src="./images/pizza-banners/advert-offer3.webp" alt="">
+            </div>
+            <div class="col-md-3" id="menu4">
+                <img id="port" src="./images/pizza-banners/advert-offer4.webp" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end of dishes -->
+    <!-- Order -->
+    <div class="jumbotron" id="order">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text-center" id="order-pizza">Make An Order</h3>
+                <div class="numbre">
+                   <select name="" id="pname" class="validate" required ">
+                        <option value="selected" selected class="selected">Flavour</option>
+                        <option value="Cheese Pizza">Cheese Pizza</option>
+                        <option value="Veggie Pizza">Veggie Pizza</option>
+                        <option value="Pepperoni Pizza">Pepperoni Pizza</option>
+                        <option value="Meat Pizza">Meat Pizza</option>
+                        <option value="Margherita Pizza">Margherita Pizza</option>
+                        <option value="BBQ Chicken Pizza">BBQ Chicken Pizza</option>
+                        <option value="Hawaiian Pizza">Hawaiian Pizza</option>
+                        <option value="Buffalo Pizza">Buffalo Pizza</option>
+                        <option value="Supreme Pizza">Supreme Pizza</option>
+                        <option value="Works Pizza">Works Pizza</option>
+                    </select>
+                    <select name="" id="size" class="validate" required >
+                        <option value="selected" selected class="selected">Choose Your Size:</option>
+                        <option value="Large">Large(Ksh 1200)</option>
+                        <option value="Medium">Medium(Ksh 900)</option>
+                        <option value="Small">Small(Ksh 750)</option>
+                        <option value="One Piecer">One Piecer(Ksh 250)</option>
+                        <option value="Regular">Regular(Ksh 650)</option>
+                        <option value="Pizza Kadogo">Pizza Kadogo(Ksh 500)</option>
+                    </select>
+                    <select name="" id="crust" class="validate" required >
+                        <option value="selected" selected class="selected">Choose Your Crust:</option>
+                        <option value="Crispy">Crispy(Ksh350)</option>
+                        <option value="Stuffed">Stuffed(Ksh250)</option>
+                        <option value="Gluten-free">Gluten-free(Ksh150)</option>
+                    </select>
+                    <select name="" id="toppings" class="validate" required >
+                        <option value="selected" selected class="selected">Choose Your Toppings:</option>
+                        <option value="Mushroom">Mushroom(Ksh 200)</option>
+                        <option value="Sausage">Sausage(Ksh 180)</option>
+                        <option value="Bacon">Bacon(Ksh 280)</option>
+                        <option value="Extra Cheese">Extra Cheese(Ksh 200)</option>
+                        <option value="Pineapple">Pineapple(Ksh 150)</option>
+                        <option value="Pepperoni">Pepperoni(Ksh 250)</option>
+                    </select>
+                    <input name="" required value="number" type="number" id="number" placeholder="Number of pizzas" min="1"
+                        class="n" >
+            <button class="btn btn-primary btn-outline" id="btnn" onclick="">Checkout</button>
+            <div class="container-fluid" id="selection">
+                <h2>Place Your Order</h2>
+                <div class="selection">
+                    <div class="customer">
+                        <h3>Your Order is;</h3>
+                        <div id="cart1">
+                            <ol id="cart"></ol>
+                        <div class="delivery">
+                            <h3>Deliver?</h3>
+                            <form action="">
+                                <input type="radio" id="yes" name="fav_dev" value="Yes">
+                                <label for="html">Yes</label>
+                                <input type="radio" id="no" name="fav_dev" value="No">
+                                <label for="css">No</label>
+                        </form>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+    <!-- End of Order Section -->
+    <!-- Footer -->
+    <footer id="#contact">
+        <div class="footer">
+           <div class="container">
+              <div class="row">
+             <div class="col-lg-2 col-md-6 col-sm-12 width">
+               <div class="address">
+                 <p>P.O. Box 1243,<br/>Ngong Lane, Off Ngong Road.<br/>Nairobi.</p>
+               </div>
+             </div>
+                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 width">
+                    <div class="address">
+                       <h3>Newsletter </h3>
+                       <input class="form-control" placeholder="Enter your email" type="type" name="Enter your email">
+                       <button class="submit-btn">Subscribe</button>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="copyright">
+              <p>(c) 2021<br/>Yomme Pizzeria.</p>
+           </div>
+        </div>
+     </footer>
+
+
+<script src="./js/jquery-3.6.0.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
